@@ -1,17 +1,15 @@
-import { setRegisterFormListener } from "./handlers/register.js";
-import { setLoginFormListener } from "./handlers/login.js";
-import * as post from "./api/posts/index.js";
+import * as listeners from "./handlers/index.js";
+import * as templates from "./templates/index.js";
+import * as postMethods from "./api/posts/index.js";
 
 const path = location.pathname;
 
 if (path === "/profile/login/") {
-    setLoginFormListener()
+    listeners.setLoginFormListener()
 } else if (path === "/profile/register/") {
-    setRegisterFormListener()
+    listeners.setRegisterFormListener()
+} else if (path === "post/create/") {
+    listeners.setCreatePostListener()
+} else if (path === "post/edit/") {
+    listeners.setUpdatePostListener()
 }
-
-post.createPost()
-post.updatePost()
-post.removePost()
-post.getPost()
-post.getPosts()
