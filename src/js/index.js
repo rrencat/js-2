@@ -8,8 +8,10 @@ if (path === "/profile/login/") {
     listeners.setLoginFormListener()
 } else if (path === "/profile/register/") {
     listeners.setRegisterFormListener()
-} else if (path === "post/create/") {
+} else if (path === "/post/create/") {
     listeners.setCreatePostListener()
-} else if (path === "post/edit/") {
+} else if (path === "/post/edit/") {
     listeners.setUpdatePostListener()
+} else if (path === "/profile/edit/") {
+    listeners.setUpdateProfileListener()
 }
