@@ -21,4 +21,6 @@ export async function login(profile) {
     storage.save("token", accessToken);
 
     storage.save("profile", userProfile);
+
+    location.href = "/feed";
 }

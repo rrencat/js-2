@@ -1,0 +1,13 @@
+* {
+  padding: 0;
+}
+
+.welcome {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.form-control:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

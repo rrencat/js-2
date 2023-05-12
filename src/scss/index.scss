@@ -1,4 +1,6 @@
+@import "./ui/variables.scss";
 @import "../../node_modules/bootstrap/scss/bootstrap";
+@import "./ui/styles.scss";
 
 .form-control:disabled {
   opacity: 0.5;

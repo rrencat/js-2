@@ -10719,5 +10719,23 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+* {
+  padding: 0;
+}
+
+.welcome {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.form-control:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.form-control:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
 
 /*# sourceMappingURL=index.css.map */
