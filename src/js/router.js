@@ -3,7 +3,7 @@ import * as listeners from "./handlers/index.js";
 export default function router() {
     const path = location.pathname;
 
-    swithc (path) {
+    switch (path) {
         case "/profile/login/":
             listeners.setLoginFormListener()
             break; 
