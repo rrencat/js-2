@@ -1,8 +1,11 @@
 export function postTemplate(postData) {
     const post = document.createElement("div");
     post.classList.add("post");
-    post.innerText = postData.title;
-    
+    post.classList.add("card");
+    post.innerText = `${postData.title}
+                    ${postData.body}`;
+
+
 
     if (postData.media) {
         const img = document.createElement("img");
@@ -19,5 +22,5 @@ export function renderPostTemplate(postData, parent) {
 }
 
 export function renderPostTemplates(postDataList, parent) {
-    parent.append(..postDataList.map(postTemplate))
+    parent.append(...postDataList.map(postTemplate))
 }
