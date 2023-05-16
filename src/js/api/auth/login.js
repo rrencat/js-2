@@ -3,6 +3,11 @@ import { API_SOCIAL_URL } from "../constants.js";
 const action = "/auth/login";
 const method = "post";
 
+/**
+ * Allows a user to login
+ * @param {string} profile 
+ * @returns 
+ */
 export async function login(profile) {
 	const loginURL = API_SOCIAL_URL + action;
 	const body = JSON.stringify(profile);
