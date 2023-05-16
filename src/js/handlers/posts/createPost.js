@@ -1,4 +1,4 @@
-import { createPost } from "../api/posts/index.js";
+import { createPost } from "../../api/posts/index.js";
 
 export function setCreatePostListener() {
     const form = document.querySelector("#createPost");
@@ -11,6 +11,7 @@ export function setCreatePostListener() {
             const post = Object.fromEntries(formData.entries())
     
             createPost(post)
+            console.log("eureka");
         })
     }
 }
