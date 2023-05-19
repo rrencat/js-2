@@ -1,5 +1,4 @@
 import { API_SOCIAL_URL } from "../constants.js";
-
 import { fetchToken } from "../fetchToken.js";
 
 const action = "/posts";
@@ -12,6 +11,7 @@ export async function createPost(postData) {
         method,
         body: JSON.stringify(postData)
     })
-
+   
     return await response.json();
+    
 }
