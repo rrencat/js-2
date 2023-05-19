@@ -5,9 +5,10 @@ const method = "post";
 
 /**
  * Allows a user to login
- * @param {string} profile 
- * @returns 
+ * @param {object} profile - The user profile containing login credentials.
+ * @returns {void}
  */
+
 export async function login(profile) {
 	const loginURL = API_SOCIAL_URL + action;
 	const body = JSON.stringify(profile);
