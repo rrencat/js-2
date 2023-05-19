@@ -1,4 +1,4 @@
-import { displayMessage } from "../ui/common/displayMessage.js";
+import displayMessage from "../ui/common/displayMessage";
 
 /**
  * Fetches data from a specified endpoint using the provided options.
