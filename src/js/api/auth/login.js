@@ -18,7 +18,7 @@ export async function login(profile) {
 			"Content-Type": "application/json",
 		},
 		method,
-		body,
+		body, 
 	});
 
 	const json = await response.json();

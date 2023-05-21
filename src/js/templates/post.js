@@ -2,11 +2,9 @@ export function postTemplate(postData) {
     const post = document.createElement("div");
     post.classList.add("post");
     post.classList.add("card");
-    
-    post.innerText = `${postData.title}
-                    ${postData.body}`;
-    
-    
+    post.innerHTML = `<h2>${postData.title}</h2> 
+                    <p>${postData.body}</p>
+                    <a href="/post/?id=${postData.id}" class="btn-primary">View Post</a>`;
 
     if (postData.media) {
         const img = document.createElement("img");
@@ -24,7 +22,9 @@ export function renderPostTemplate(postData, parent) {
 }
 
 export function renderPostTemplates(postDataList, parent) {
+    parent.innerHTML = "";
     parent.append(...postDataList.map(postTemplate))
+    parent.classList.add("row");
 }
 
 
