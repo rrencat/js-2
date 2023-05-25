@@ -5,13 +5,26 @@ export function setCreatePostListener() {
 
     if (form) {
         form.addEventListener("submit", (event) => {
-            event.preventDefault()
-            const form = event.target;
-            const formData = new FormData(form);
-            const post = Object.fromEntries(formData.entries())
-    
-            createPost(post)
-            console.log("eureka");
+			event.preventDefault();
+			const form = event.target;
+			const formData = new FormData(form);
+
+			const title = formData.get("title");
+			const body = formData.get("body");
+			const tags = formData.get("tags");
+			const media = formData.get("media");
+
+			const post = {
+				title: title,
+				body: body,
+				media: media,
+			};
+
+			post.tags = [tags];
+
+            console.log(post);
+
+			createPost(post);
         })
     }
 }
