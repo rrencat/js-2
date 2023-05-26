@@ -15,8 +15,9 @@ export function setLoginFormListener() {
 			const profile = Object.fromEntries(formData.entries());
 
 			try {
-				const { accessToken, ...userProfile } = await login(profile);
+				const { accessToken, name, ...userProfile } = await login(profile);
 				storage.save("token", accessToken);
+				storage.save("name", name);
 				storage.save("profile", userProfile);
 				location.href = "/feed";
 			} catch (error) {
