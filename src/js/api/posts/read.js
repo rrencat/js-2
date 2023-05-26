@@ -2,11 +2,15 @@ import { API_SOCIAL_URL } from "../constants.js";
 import { fetchToken } from "../fetchToken.js";
 
 const action = "/posts";
+const method = "GET";
+
 
 export async function getPosts() {
-    const updatePostURL = `${API_SOCIAL_URL}${action}`;
+    const url = `${API_SOCIAL_URL}${action}`;
 
-    const response = await fetchToken(updatePostURL)
+    const response = await fetchToken(url, {
+        method,
+    });
 
     return await response.json();
 }
@@ -17,9 +21,12 @@ export async function getPost(id) {
         throw new Error("This requires a post ID");
     }
 
-    const getPostURL = `${API_SOCIAL_URL}${action}/${id}`;
+    const url = `${API_SOCIAL_URL}${action}/${id}`;
 
-    const response = await fetchToken(getPostURL)
+    const response = await fetchToken(url, {
+        method,
+    });
 
     return await response.json();
 }
+
