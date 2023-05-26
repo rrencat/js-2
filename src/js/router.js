@@ -16,13 +16,13 @@ export default function router() {
             break; 
         case "/post/create/":
             listeners.setCreatePostListener()
-            break; 
-        case "/post/edit/":
-            listeners.setUpdatePostListener()
             break;
         case "/feed/":
            listeners.displayProfilePostsListener()
            break;
+        case "/post/edit/":
+            listeners.setUpdatePostListener()
+            break;
     } 
 }
 

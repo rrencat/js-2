@@ -1,4 +1,5 @@
 import { createPost } from "../../api/posts/index.js";
+import displayMessage from "../../ui/common/displayMessage.js";
 
 export function setCreatePostListener() {
     const form = document.querySelector("#createPost");
@@ -22,9 +23,9 @@ export function setCreatePostListener() {
 
 			post.tags = [tags];
 
-            console.log(post);
-
+			
 			createPost(post);
+			displayMessage("success", "Yey! You’ve successfully created a post!", "#message");
         })
     }
 }

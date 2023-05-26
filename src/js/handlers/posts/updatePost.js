@@ -1,4 +1,6 @@
-import { updatePost } from "../../api/posts/index.js";
+import { getPost } from "../../api/posts/read.js";
+import { updatePost } from "../../api/posts/update.js";
+import displayMessage from "../../ui/common/displayMessage.js";
 
 export async function setUpdatePostListener() {
     const form = document.querySelector("#editPost");
@@ -7,7 +9,7 @@ export async function setUpdatePostListener() {
     const id = url.searchParams.get("id");
 
     if (form) {
-        const button = form.querySelector("button");
+        const button = document.querySelector("button");
         button.disabled = true;
 
         const post = await getPost(id);
@@ -24,10 +26,12 @@ export async function setUpdatePostListener() {
             const form = event.target;
             const formData = new FormData(form);
             const post = Object.fromEntries(formData.entries())
+            
+            
             post.id = id;
-    
-            updatePost(post)
+
+            updatePost(post);
+            displayMessage("success", "Yey! You’ve successfully updated your post!", "#message");
         })
     }
 }
-
