@@ -1,17 +1,23 @@
 import { load } from "../storage/index.js";
 
-export function headers() {
-    const token = load("token");
-
-    return {
-        "Content-Type": "application/json",
-        "Authorization": `Bearer ${token}`
-    };
-}
-
 export async function fetchToken(url, options = {}) {
-    return fetch(url, {
-      ...options,
-      headers: headers(),
-    });
+  const token = load("token");
+  
+  if (!token) {
+		throw new Error("No token found");
+	}
+
+	const myOptions = {
+		...options,
+		headers: {
+			"Content-Type": "application/json;",
+			Authorization: `Bearer ${token}`,
+		},
+	};
+
+	return fetch(url, myOptions);
   }
+
+ 
+
+	
