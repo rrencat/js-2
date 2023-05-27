@@ -47,7 +47,7 @@ export function displayProfilePostsListener() {
 	window.addEventListener("DOMContentLoaded", displayPosts);
 }
 
-async function displayPosts() {
+export async function displayPosts() {
 	try {
 		const posts = await api.getProfile();
 		renderPosts(posts);

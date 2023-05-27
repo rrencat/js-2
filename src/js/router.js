@@ -1,4 +1,5 @@
 import * as listeners from "./handlers/index.js";
+import { homePage } from "./pages/homePage.js";
 
 
 export default function router() {
@@ -18,7 +19,7 @@ export default function router() {
             listeners.setCreatePostListener()
             break;
         case "/feed/":
-           listeners.displayProfilePostsListener()
+           homePage()
            break;
         case "/post/edit/":
             listeners.setUpdatePostListener()
