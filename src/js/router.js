@@ -1,7 +1,9 @@
 import * as listeners from "./handlers/index.js";
 import { homePage } from "./pages/homePage.js";
 
-
+/**
+ * This function handles the logic based on the current path the user is on
+ */
 export default function router() {
     const path = location.pathname;
 

@@ -1,6 +1,9 @@
 import { createPost } from "../../api/posts/index.js";
 import displayMessage from "../../ui/common/displayMessage.js";
 
+/**
+ * This function adds an event listener to a create post form element and sends the users data to the API (creates a post)
+ */
 export function setCreatePostListener() {
     const form = document.querySelector("#createPost");
 

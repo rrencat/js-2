@@ -1,7 +1,10 @@
 import * as api from "../../api/profiles/index.js";
 import displayMessage from "../../ui/common/displayMessage.js";
 
-
+/**
+ * This function renders the posts
+ * @param {*} posts 
+ */
 export default function renderPosts(posts) {
 	const postsContainer = document.querySelector("#postsContainer");
 	postsContainer.innerHTML = "";
@@ -9,6 +12,11 @@ export default function renderPosts(posts) {
 	postsContainer.append(...postsHtml);
 }
 
+/**
+ * This function creates a post with div, buttons etc.
+ * @param {*} post 
+ * @returns - The post in its entirety
+ */
 function createPost(post) {
 	const div = document.createElement("div");
 	div.classList.add("post");
@@ -42,11 +50,16 @@ function createPost(post) {
 }
 
 
-
+/**
+ * This function adds a listener 
+ */
 export function displayProfilePostsListener() {
 	window.addEventListener("DOMContentLoaded", displayPosts);
 }
 
+/**
+ * This function displays the posts and displays a message incase of an error
+ */
 export async function displayPosts() {
 	try {
 		const posts = await api.getProfile();

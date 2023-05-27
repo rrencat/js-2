@@ -1,6 +1,9 @@
 import { register } from "../../api/auth/register.js";
 import displayMessage from "../../ui/common/displayMessage.js";
 
+/**
+ * This function handles the listener for the registration form and displays a message if the user successfully registered
+ */
 export function setRegisterFormListener() {
     const form = document.querySelector("#registerForm");
 

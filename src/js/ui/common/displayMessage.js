@@ -4,7 +4,6 @@
  * @param {string} message - The message to display
  * @param {string} target - Where the message is displayed
  */
-
 export default function displayMessage(type, message, target) {
 	const container = document.querySelector(target);
 

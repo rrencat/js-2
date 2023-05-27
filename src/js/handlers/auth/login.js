@@ -2,7 +2,9 @@ import { login } from "../../api/auth/login.js";
 import displayMessage from "../../ui/common/displayMessage.js";
 import * as storage from "../../storage/index.js";
 
-
+/**
+ * This function handles the listener for the login form and stores items in local storage
+ */
 
 export function setLoginFormListener() {
 	const form = document.querySelector("#loginForm");

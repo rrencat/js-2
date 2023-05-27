@@ -2,6 +2,9 @@ import { getPost } from "../../api/posts/read.js";
 import { updatePost } from "../../api/posts/update.js";
 import displayMessage from "../../ui/common/displayMessage.js";
 
+/**
+ * This function lets a user update their post
+ */
 export async function setUpdatePostListener() {
     const form = document.querySelector("#editPost");
 
